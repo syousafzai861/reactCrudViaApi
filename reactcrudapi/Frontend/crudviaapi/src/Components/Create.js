@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 const Create = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
+    const history = useNavigate();
     const handleSubmit = ()=>{
       // e.preventDefault();
       axios({
@@ -20,6 +21,7 @@ const Create = () => {
             // "Content-Type": "application/json"
         }
       })
+      history("/read");
     }
   return (
     <div>
