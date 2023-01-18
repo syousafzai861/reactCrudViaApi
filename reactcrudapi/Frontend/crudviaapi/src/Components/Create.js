@@ -21,7 +21,10 @@ const Create = () => {
             // "Content-Type": "application/json"
         }
       })
-      history("/read");
+      
+        history("/read");
+      
+      
     }
   return (
     <div>
