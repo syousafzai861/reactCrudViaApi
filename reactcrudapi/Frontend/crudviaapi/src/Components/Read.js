@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from "react-router-dom";
 import axios from 'axios';
 const Read = () => {
     const [data, setdata] = useState([]);
@@ -40,6 +41,12 @@ const Read = () => {
        
     }
 
+    function handleUpdate(id,name,email){
+       localStorage.setItem("id",id);
+       localStorage.setItem("name",name);
+       localStorage.setItem("email",email);
+    }
+
     return (
         <>
         <button id='btn' className="btn btn-warning" onClick={refresh}>Refresh</button>
@@ -62,7 +69,9 @@ const Read = () => {
                                 <th scope="row">{data.id}</th>
                                 <td>{data.attributes.name}</td>
                                 <td>{data.attributes.email}</td>
-                                <td><button className="btn btn-success" >Edit</button></td>
+                                <Link to="/Update">
+                                <td><button className="btn btn-success" onClick={()=>handleUpdate(data.id,data.attributes.name,data.attributes.email)}>Edit</button></td>
+                                </Link>
                                 <td><button className="btn btn-danger" onClick={()=>handleDelete(data.id)}>Delete</button></td>
                             </tr>
                         </tbody>
