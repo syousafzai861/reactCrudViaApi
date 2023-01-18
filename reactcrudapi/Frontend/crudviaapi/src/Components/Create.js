@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 const Create = () => {
     const [name, setName] = useState("");
@@ -29,6 +29,12 @@ const Create = () => {
   return (
     <div>
       <>
+      <div className="d-flex justify-content-between">
+        <h4>ADD DATA</h4>
+        <Link to="/read">
+        <button className="btn btn-primary btn-sm">SHOW DATA</button>
+        </Link>
+      </div>
         <form>
           <div className="form-group">
             <label htmlFor="exampleInputPassword1">Name</label>

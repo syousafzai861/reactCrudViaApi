@@ -35,11 +35,11 @@ const Read = () => {
         getData();
     }, []);
     
-    function refresh(){
+    // function refresh(){
         
-          console.log("i am clicked")
+    //       console.log("i am clicked")
        
-    }
+    // }
 
     function handleUpdate(id,name,email){
        localStorage.setItem("id",id);
@@ -49,7 +49,7 @@ const Read = () => {
 
     return (
         <>
-        <button id='btn' className="btn btn-warning" onClick={refresh}>Refresh</button>
+        {/* <button id='btn' className="btn btn-warning" onClick={refresh}>Refresh</button> */}
             <table className="table my-4">
                 <thead>
                     <tr>
@@ -70,9 +70,9 @@ const Read = () => {
                                 <td>{data.attributes.name}</td>
                                 <td>{data.attributes.email}</td>
                                 <Link to="/Update">
-                                <td><button className="btn btn-success" onClick={()=>handleUpdate(data.id,data.attributes.name,data.attributes.email)}>Edit</button></td>
+                                <td><button className="btn btn-success btn-sm" onClick={()=>handleUpdate(data.id,data.attributes.name,data.attributes.email)}>Edit</button></td>
                                 </Link>
-                                <td><button className="btn btn-danger" onClick={()=>handleDelete(data.id)}>Delete</button></td>
+                                <td><button className="btn btn-danger btn-sm" onClick={()=>handleDelete(data.id)}>Delete</button></td>
                             </tr>
                         </tbody>
                     </>);
