@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+
 import axios from 'axios';
 const Create = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const handleSubmit = ()=>{
+      // e.preventDefault();
       axios({
         method: 'post',
         url: 'http://localhost:1337/api/cruds',
@@ -24,7 +26,7 @@ const Create = () => {
       <>
         <form>
           <div className="form-group">
-            <label for="exampleInputPassword1">Name</label>
+            <label htmlFor="exampleInputPassword1">Name</label>
             <input
               type="text"
               className="form-control"
@@ -34,7 +36,7 @@ const Create = () => {
             />
           </div>
           <div className="form-group">
-            <label for="exampleInputEmail1">Email address</label>
+            <label htmlFor="exampleInputEmail1">Email address</label>
             <input
               type="email"
               className="form-control"
