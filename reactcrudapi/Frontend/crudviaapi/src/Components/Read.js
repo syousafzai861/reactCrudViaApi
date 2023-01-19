@@ -8,7 +8,7 @@ const Read = () => {
             method: 'get',
             url: 'http://localhost:1337/api/cruds',
             headers: {
-                "Authorization": "Bearer 38cc79f4e24dd0a7ec2d807570f2e72ac54c4d68a7c9588385029da521fd6147d7e2b971a64ae4282bf6b758cc1d2206eacada48585f7c8773fd06a6b2a9bada17591fbb136798ccf84650badaf3a4b851860b59d8eb3bb2f4dea8ea2f5795067b1c9db50d2b3ddcef112ced2f9cec0ccdd83aac61f47bb8df7d04b310a060af",
+                "Authorization": "Bearer b706f1416f642dadd4bbd5e96dae954074ab815bd92e49e21f5f272ff68b8cb00ba0c517a3aee98017510d4035ca39cd18ba66b500b9170a868b40dc53211b97d7fa9d9e92e7bfd942522d645fdb2d34cef63ab19e4b3ff885ec8a5875b6ea9657d69bbee52dd021faaebac588a3f18a444208ba2db9b4b6706d5dd3b2090fb0",
                 // "Content-Type": "application/json"
             }
         })
@@ -24,7 +24,7 @@ const Read = () => {
             method: 'delete',
             url: `http://localhost:1337/api/cruds/${id}`,
             headers: {
-                "Authorization": "Bearer 38cc79f4e24dd0a7ec2d807570f2e72ac54c4d68a7c9588385029da521fd6147d7e2b971a64ae4282bf6b758cc1d2206eacada48585f7c8773fd06a6b2a9bada17591fbb136798ccf84650badaf3a4b851860b59d8eb3bb2f4dea8ea2f5795067b1c9db50d2b3ddcef112ced2f9cec0ccdd83aac61f47bb8df7d04b310a060af",
+                "Authorization": "Bearer b706f1416f642dadd4bbd5e96dae954074ab815bd92e49e21f5f272ff68b8cb00ba0c517a3aee98017510d4035ca39cd18ba66b500b9170a868b40dc53211b97d7fa9d9e92e7bfd942522d645fdb2d34cef63ab19e4b3ff885ec8a5875b6ea9657d69bbee52dd021faaebac588a3f18a444208ba2db9b4b6706d5dd3b2090fb0",
                 // "Content-Type": "application/json"
             }
         }).then(()=>{

@@ -19,10 +19,14 @@ function Registration() {
                 username: name,
                 email: email,
                 password: password,
+                headers: {
+                    "Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiaWF0IjoxNjc0MTI4MTQ0LCJleHAiOjE2NzY3MjAxNDR9.v9uUnCzcxnyraYEN8bkZs1uYBQX4a4FmoidLxuDhLwY",
+                   // "Content-Type": "application/json"
+               }
             })
             .then(response => {
                 // Handle success.
-
+                console.log(response)
                 Swal.fire(
                     'SUCCESSFULLY REGISTERED',
                     'WELCOME',
