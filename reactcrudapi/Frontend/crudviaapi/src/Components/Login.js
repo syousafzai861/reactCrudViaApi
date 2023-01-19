@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import Swal from 'sweetalert2'
 function Login() {
     const [identifier, setIdentifier] = useState('');
     const [password, setPassword] = useState('');
+    const history = useNavigate();
     let login = () => {
         console.log("i am loged in")
         console.log(identifier);
@@ -19,12 +21,13 @@ function Login() {
 
                 localStorage.setItem('token', response.jwt)
                 Swal.fire(
-                    'WelCome!',
-                    JSON.stringify(response.data.user.username),
-                    'You Are Logged In'
-                )
+                     'success',
+                     'WELCOME'
+                     
+                  )
                 console.log('User profile', response.data.user);
                 console.log('User token', response.data.jwt);
+                history("/read");
 
 
             })
@@ -32,11 +35,13 @@ function Login() {
                 // Handle error.
                 console.log('An error occurred:', error.response);
                 Swal.fire(
-                    'Oops!',
-                    JSON.stringify(error.response),
-                    'Sorry Provide Right Credentials...!!!!!'
-                )
+                    'success',
+                    'Oops Some thing went wrong',
+                    'question'
+                  )
             });
+            
+
     }
     return (
         <Container>
