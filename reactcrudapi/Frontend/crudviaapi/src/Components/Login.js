@@ -21,10 +21,10 @@ function Login() {
 
                 localStorage.setItem('token', response.jwt)
                 Swal.fire(
-                     'success',
-                     'WELCOME'
-                     
-                  )
+                    'success',
+                    'Loged in Succesfully',
+                    'question'
+                )
                 console.log('User profile', response.data.user);
                 console.log('User token', response.data.jwt);
                 history("/read");
@@ -35,12 +35,12 @@ function Login() {
                 // Handle error.
                 console.log('An error occurred:', error.response);
                 Swal.fire(
-                    'success',
+                    'error',
                     'Oops Some thing went wrong',
                     'question'
-                  )
+                )
             });
-            
+
 
     }
     return (

@@ -13,7 +13,7 @@ function App() {
       <h1 className='text-center'>REACT BASED CRUD APPLICATION VIA API</h1>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/registration" element={<Registration />}>  </Route>
+          <Route exact path="/registration" element={<Registration />}></Route>
           <Route exact path="/login" element={<Login />}>  </Route>
           <Route exact path="/" element={<Create />}>  </Route>
           <Route exact path="/read" element={<Read />}>  </Route>
