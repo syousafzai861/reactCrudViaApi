@@ -27,7 +27,7 @@ function Login() {
                 )
                 console.log('User profile', response.data.user);
                 console.log('User token', response.data.jwt);
-                history("/readuser");
+                history("/private/user");
 
 
             })
