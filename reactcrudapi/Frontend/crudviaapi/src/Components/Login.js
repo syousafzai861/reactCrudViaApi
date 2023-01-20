@@ -27,6 +27,8 @@ function Login() {
                 )
                 console.log('User profile', response.data.user);
                 console.log('User token', response.data.jwt);
+                localStorage.setItem("identifier",identifier);
+                localStorage.setItem("password",password);
                 history("/private/user");
 
 
@@ -40,10 +42,9 @@ function Login() {
                     'question'
                 )
             });
-
-
     }
-
+ 
+ 
     let Resetpass = () => {
         axios
             .post('http://localhost:1337/api/auth/forgot-password', {

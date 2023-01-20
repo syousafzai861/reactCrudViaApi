@@ -1,11 +1,11 @@
 import React from 'react'
 import { Navigate, Outlet } from "react-router-dom";
-import login from "../Components/Login";
+// import login from "../Components/Login";
 
 const Privateroute =() => {
 
     // let login = true;
-    if(login){
+    if(localStorage.getItem("identifier")){
         return <Outlet/>
     }
     else{
