@@ -49,6 +49,7 @@ const Read = () => {
 
     return (
         <>
+        <h1 className='text-center'>REACT BASED CRUD APPLICATION VIA API</h1>
         {/* <button id='btn' className="btn btn-warning" onClick={refresh}>Refresh</button> */}
             <table className="table my-4">
                 <thead>

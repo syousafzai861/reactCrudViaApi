@@ -3,6 +3,7 @@ import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import Swal from 'sweetalert2'
+import styled from 'styled-components';
 function Login() {
     const [identifier, setIdentifier] = useState('');
     const [password, setPassword] = useState('');
@@ -27,8 +28,8 @@ function Login() {
                 )
                 console.log('User profile', response.data.user);
                 console.log('User token', response.data.jwt);
-                localStorage.setItem("identifier",identifier);
-                localStorage.setItem("password",password);
+                localStorage.setItem("identifier", identifier);
+                localStorage.setItem("password", password);
                 history("/private/user");
 
 
@@ -43,8 +44,8 @@ function Login() {
                 )
             });
     }
- 
- 
+
+
     let Resetpass = () => {
         axios
             .post('http://localhost:1337/api/auth/forgot-password', {
@@ -66,53 +67,84 @@ function Login() {
             });
     }
     useEffect(() => {
-      const keyDownHandler = event =>{
-        console.log('key pressed' + event.key)
+        const keyDownHandler = event => {
+            console.log('key pressed' + event.key)
 
-        if(event.key === "Enter"){
-            
-            login();
+            if (event.key === "Enter") {
+
+                login();
+            }
         }
-      }
-      document.addEventListener('keydown',keyDownHandler)
+        document.addEventListener('keydown', keyDownHandler)
 
-      return ()=>{
-        document.removeEventListener('keydown',keyDownHandler)
-      };
+        return () => {
+            document.removeEventListener('keydown', keyDownHandler)
+        };
     });
-    
-    
+
+    const MainContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-item: center;
+    flex-direction: coloumn;
+    height: 70vh;
+    width:25vw;
+    background: rgba(255,255,255,0.2);
+    border-radius:40px;
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+    backdrop-filter: blur(8.5px);
+    letter-spacing: 0.1rem;
+     `;
+
+    const LoginText = styled.h1`
+     margin: 3rem 0 2rem 0;
+     font-size: 900;
+     justify-content: center;
+     align-item: center;
+    `;
+
+    const inputtext = styled.div`
+    display: flex;
+    flex-direction: coloumn;
+    justify-content: space-around;
+    `;
     return (
-        <Container>
+        <MainContainer>
+            <Container>
+                <Row>
+                    
+                    <Col className="text-center" xs={{ span: 6, offset: 3 }}>
+                        <LoginText>
+                        <h3>Login </h3>
+                        </LoginText>
+                        <Form>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Email address</Form.Label>
+                                 
+                                <Form.Control type="email" name="identifier" value={identifier} onChange={(e) => { setIdentifier(e.target.value) }} placeholder="Enter email" />
 
-            <Row>
-                <Col md={{ span: 6, offset: 3 }}>
-                    <h1>Login Page</h1>
-                    <Form>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" name="identifier" value={identifier} onChange={(e) => { setIdentifier(e.target.value) }} placeholder="Enter email" />
+                            </Form.Group>
 
-                        </Form.Group>
-
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" name="password" value={password} onChange={(e) => { setPassword(e.target.value) }} placeholder="Password" />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                            <Form.Check type="checkbox" label="Check me out" />
-                        </Form.Group>
-                        <Button className="btn-sm" variant="primary" type="button" onClick={() => { login() }}>
-                            LOGIN
-                        </Button>
-                        <Button className="btn-sm" variant="primary" type="button" onClick={() => { Resetpass() }}>
-                            Reset password
-                        </Button>
-                    </Form>
-                </Col>
-            </Row>
-        </Container>
+                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control type="password" name="password" value={password} onChange={(e) => { setPassword(e.target.value) }} placeholder="Password" />
+                            </Form.Group>
+                           
+                            <Button className="btn-sm" variant="primary" type="button" onClick={() => { login() }}>
+                                LOGIN
+                            </Button>
+                            
+                            <Button className="btn-sm my-3" variant="primary" type="button" onClick={() => { Resetpass() }}>
+                                Reset password
+                            </Button>
+                        </Form>
+                    </Col>
+                </Row>
+            </Container>
+        </MainContainer>
     );
 }
+
+
 
 export default Login;
