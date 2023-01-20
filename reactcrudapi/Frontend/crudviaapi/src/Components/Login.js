@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
@@ -65,6 +65,23 @@ function Login() {
                 console.log('An error occurred:', error.response);
             });
     }
+    useEffect(() => {
+      const keyDownHandler = event =>{
+        console.log('key pressed' + event.key)
+
+        if(event.key === "Enter"){
+            
+            login();
+        }
+      }
+      document.addEventListener('keydown',keyDownHandler)
+
+      return ()=>{
+        document.removeEventListener('keydown',keyDownHandler)
+      };
+    });
+    
+    
     return (
         <Container>
 
