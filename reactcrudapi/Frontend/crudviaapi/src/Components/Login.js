@@ -46,12 +46,15 @@ function Login() {
 
     let Resetpass = () => {
         axios
-            .post('http://localhost:1337/api/auth/change-password', {
+            .post('http://localhost:1337/api/auth/forgot-password', {
+
+
                 email: identifier, // user's email
+
                 headers: {
-                    "Authorization":"Bearer abd93751cc407416d7571f57b6bfd5416fb7da75e8335a241c008b09811d425337610887c5614c9d9727df7b6f059a096b1e35c07d56185c542ad29de70d5b0563694ad2716e6ba08be03f6fcb642897f2878651b61460d752dab25ba06d80f5cfa72939dc29b47ce8f2046a77e3c12023dfd8d85e5c6b7f91ff61cdf73d24e6",
+                    "Authorization": "Bearer 9570a258181bb5bf364f3bf1409bea85796dc4fe0d79dbfd031c1a5bde37b751a059a5151e2991b9eca490a79105d3ae8b279e10211c22bd13fa07ade6aaff107e5d2a7279902d0b4a8cda8e8356767b066af28eab1ab5ff7dcfbbec71194d314f664b8c80560d073b93e45c92ac7591dcdbd27c9c00ccb957d2583e1c02200b",
                     "Content-Type": "application/json"
-               }
+                }
             })
             .then(response => {
                 console.log(response)
@@ -81,7 +84,7 @@ function Login() {
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
                             <Form.Check type="checkbox" label="Check me out" />
                         </Form.Group>
-                        <Button  className="btn-sm" variant="primary" type="button" onClick={() => { login() }}>
+                        <Button className="btn-sm" variant="primary" type="button" onClick={() => { login() }}>
                             LOGIN
                         </Button>
                         <Button className="btn-sm" variant="primary" type="button" onClick={() => { Resetpass() }}>
