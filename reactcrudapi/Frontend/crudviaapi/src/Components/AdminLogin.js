@@ -15,6 +15,10 @@ function AdminLogin() {
             .post('http://localhost:1337/api/auth/local', {
                 identifier: identifier,
                 password: password,
+                headers: {
+                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NDE5NjEwOSwiZXhwIjoxNjc2Nzg4MTA5fQ.AfA6HnMLDiiBtUV-IjAHdn3rkQMSrZGiXy22hAaevZQ",
+                    // "Content-Type": "application/json"
+                }
             })
             .then(response => {
                 // Handle success.
