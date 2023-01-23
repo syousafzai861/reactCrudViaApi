@@ -29,6 +29,7 @@ const Create = () => {
   return (
     <div>
       <>
+      <div className="adddiv">
       <div className="d-flex justify-content-between">
         <h4>ADD DATA</h4>
         <Link to="/read">
@@ -62,6 +63,7 @@ const Create = () => {
             Submit
           </button>
         </form>
+        </div>
       </>
     </div>
   );

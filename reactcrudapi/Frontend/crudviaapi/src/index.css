@@ -9,11 +9,82 @@
 }
 body{
   font-family: 'Raleway', sans-serif;
-  background-image: url(./background.jpg);
+  background-image: url(./2.jpg);
   background-size: cover;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   height: 100vh;
   width: 100vw;
+  
+}
+
+input#formBasicEmail {
+  width: 300px;
+}
+
+input#formBasicPassword {
+  width: 300px;
+}
+
+button.btn-sm.btn.btn-primary {
+  border-style: solid;
+  border-color: white;
+  box-shadow: 1px 2px 10px #ced2d6;
+}
+
+.h3, h3 {
+  font-size: calc(1.3rem + .6vw);
+  font-weight: bold;
+  margin-top: 100px;
+}
+
+.form-label {
+  margin-bottom: 0.5rem;
+  margin-top: 15px;
+}
+
+table.table.my-4 {
+  text-align: center;
+  justify-content: center;
+  margin-left: 380px;
+}
+
+h1.my-4 {
+  font-weight: bold;
+}
+
+button.btn.btn-primary.btn-sm {
+  margin-left: 782px;
+}
+
+h4 {
+  margin-top: 80px;
+  font-weight: bold;
+}
+
+label {
+  margin-top: 25px;
+}
+
+
+input#name {
+  width: 310px;
+}
+
+input#email {
+  width: 310px;
+}
+
+.adddiv {
+  margin-left: 50px;
+}
+
+h1.text-center {
+  font-weight: bold;
+  margin-bottom: 150px;
+  
+}
+button.btn.btn-primary.btn-sm {
+  margin-left: -70px;
 }
