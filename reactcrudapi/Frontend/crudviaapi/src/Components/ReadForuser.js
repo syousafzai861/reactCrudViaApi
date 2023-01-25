@@ -42,7 +42,6 @@ function ReadForuser() {
   }, []);
   return (
     <>
-      <Screen2 />
       <Container>
         <Row>
           <Col className="dash">
@@ -56,8 +55,9 @@ function ReadForuser() {
             </Nav>
           </Col>
         </Row>
-      </Container>
-      {loading ? (
+        <Row>
+          <Col>
+          {loading ? (
         <ClipLoader
           className="spin"
           color={"#36d7b7"}
@@ -95,6 +95,10 @@ function ReadForuser() {
           </div>
         </div>
       )}
+          </Col>
+        </Row>
+      </Container>
+      
       
     </>
   );

@@ -87,31 +87,29 @@ h1.header {
   font-weight: bold;
 }
 
-table.table.text-center {
+/* table.table.text-center {
   margin-left: 100px;
-}
+} */
 
 .spin{
-  justify-content: center !important;
-   display: flex !important;
-   align-items: center !important;
-   text-align: center !important;
    margin-left: 600px;
+   margin-bottom: 500px;
 }
 
  .logout{
   display: flex !important;
-  /* justify-content: flex-end !important; */
   margin-left: 1100px;
-  margin-top: -600px;
+  /* margin-top: 300px; */
+  margin-top: -100px;
  }
 
  .showrec{
-  margin-top: -500px;
+  margin-bottom: 600px;
+  margin-left: 150px;
  }
 
  .dash{
-  margin-top: -605px;
+  margin-top: 500px;
   font-weight: bold;
   margin-left: 50px;
  }
