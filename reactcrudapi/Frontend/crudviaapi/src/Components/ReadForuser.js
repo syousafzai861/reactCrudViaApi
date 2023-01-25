@@ -2,8 +2,16 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Nav, NavDropdown } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import ClipLoader from "react-spinners/ClipLoader";
 
 function ReadForuser() {
+    const[loading, setLoading] = useState(false);
+    useEffect(()=>{
+      setLoading(true)
+      setTimeout(() => {
+        setLoading(false)
+      }, 1000);
+    },[])
     let user = localStorage.getItem('identifier');
     let history = useNavigate();
     console.log(user)
@@ -33,12 +41,22 @@ function ReadForuser() {
   }, []);
   return (
     <>
+    {
+      loading ? 
+      <ClipLoader
+      color={'#36d7b7'}
+      loading={loading}
+      size={100}
+      aria-label="Loading Spinner"
+      data-testid="loader"
+      /> :
+      <>
       <Nav>
         <NavDropdown title={user}>
           <NavDropdown.Item onClick={logout}>LOGOUT </NavDropdown.Item>
         </NavDropdown>
       </Nav>
-      <h1 className="my-4">DASHBOARD</h1>
+      <h1 className="my-4 text-center">DASHBOARD</h1>
       <table className="table my-4">
         <thead>
           <tr>
@@ -62,6 +80,9 @@ function ReadForuser() {
           );
         })}
       </table>
+      </>
+    }
+    
     </>
   );
 }

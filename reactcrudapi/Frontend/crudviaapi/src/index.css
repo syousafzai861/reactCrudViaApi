@@ -47,7 +47,8 @@ button.btn-sm.btn.btn-primary {
 table.table.my-4 {
   text-align: center;
   justify-content: center;
-  margin-left: 380px;
+  margin-left: 140px;
+  
 }
 
 h1.my-4 {
@@ -87,4 +88,9 @@ h1.text-center {
 }
 button.btn.btn-primary.btn-sm {
   margin-left: -70px;
+}
+
+h1.header {
+  margin-left: 288px;
+  font-weight: bold;
 }
