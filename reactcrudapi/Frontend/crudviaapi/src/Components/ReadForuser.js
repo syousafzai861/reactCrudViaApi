@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Nav, NavDropdown } from "react-bootstrap";
+import { Col, Container, Nav, NavDropdown, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 
 function ReadForuser() {
-    const[loading, setLoading] = useState(false);
-    useEffect(()=>{
-      setLoading(true)
-      setTimeout(() => {
-        setLoading(false)
-      }, 1000);
-    },[])
-    let user = localStorage.getItem('identifier');
-    let history = useNavigate();
-    console.log(user)
-    function logout(){
-        localStorage.clear();
-        history("/login")
-    }
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
+  let user = localStorage.getItem("identifier");
+  let history = useNavigate();
+  console.log(user);
+  function logout() {
+    localStorage.clear();
+    history("/login");
+  }
   const [data, setdata] = useState([]);
   function getData() {
     axios({
@@ -41,48 +41,60 @@ function ReadForuser() {
   }, []);
   return (
     <>
-    {
-      loading ? 
-      <ClipLoader
-      color={'#36d7b7'}
-      loading={loading}
-      size={100}
-      aria-label="Loading Spinner"
-      data-testid="loader"
-      /> :
-      <>
-      <Nav>
-        <NavDropdown title={user}>
-          <NavDropdown.Item onClick={logout}>LOGOUT </NavDropdown.Item>
-        </NavDropdown>
-      </Nav>
-      <h1 className="my-4 text-center">DASHBOARD</h1>
-      <table className="table my-4">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-          </tr>
-        </thead>
+     <Container>
+            <Row>
+              <Col className="dash">
+                <h1>DASHBOARD</h1>
+              </Col>
+              <Col className="logout">
+                <Nav>
+                  <NavDropdown title={user}>
+                    <NavDropdown.Item onClick={logout}>LOGOUT</NavDropdown.Item>
+                  </NavDropdown>
+                </Nav>
+              </Col>
+            </Row>
+          </Container>
+      {loading ? (
+        <ClipLoader
+          className="spin"
+          color={"#36d7b7"}
+          loading={loading}
+          size={100}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+        />
+      ) : (
+        <div>
+        
+             <div className="showrec">
+                      
+          <table className="table text-center">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+              </tr>
+            </thead>
 
-        {data.map((data) => {
-          return (
-            <>
-              <tbody>
-                <tr>
-                  <th scope="row">{data.id}</th>
-                  <td>{data.attributes.name}</td>
-                  <td>{data.attributes.email}</td>
-                </tr>
-              </tbody>
-            </>
-          );
-        })}
-      </table>
-      </>
-    }
-    
+            {data.map((data) => {
+              return (
+                <>
+                  <tbody>
+                    <tr>
+                      <th scope="row">{data.id}</th>
+                      <td>{data.attributes.name}</td>
+                      <td>{data.attributes.email}</td>
+                    </tr>
+                  </tbody>
+                </>
+              );
+            })}
+          </table>
+          </div>
+        </div>
+      )}
     </>
   );
 }
