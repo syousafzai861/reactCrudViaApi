@@ -7,17 +7,16 @@ body{
     background-color: #F6F9FC;
 }
  
-main{
-    width: 20%;
-    padding: 20px;
-}
+
 
 .sidebar{
-    background: #171D2D;
-    width: 4%;
+    background: rgb(199, 134, 49);
+    width: 6%;
     color: #F6F9FC;
     height: 100vh;
-    margin-top: -10px;
+    margin-left: -20px;
+    position: relative;
+    margin-top: -280px;
 }
 
 
@@ -25,27 +24,28 @@ main{
 .logo{
   font-size: 20px;
   display: flex;
-  margin-left: 25px;
-  margin-top: 10px;
+  margin-left: 10px;
+  position: relative;
 }
+
 
 .link{
  display: flex;
  color: #F6F9FC;
- /* padding: 10px 10px ; */
  font-size: 25px;
  margin-top: 40px;
- margin-left: 10px;
- /* margin-right: 10px; */
+ margin-left: 20px;
+ position: relative;
+
 }
 
 .icon1{
-   margin-top: 20px;
- 
-   
+   margin-top: 20px;  
+   position: relative;
 }
+
+
 .icon2{
-    margin-top: -30px;
-  
-    
+    margin-top: -30px;   
+    position: relative; 
  }

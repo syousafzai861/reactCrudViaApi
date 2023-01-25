@@ -11,6 +11,7 @@ import AdminLogin from './Components/AdminLogin';
 import Resetpassword from './Components/Resetpassword';
 import ReadForuser from './Components/ReadForuser';
 import Privateroute from './Components/Privateroute';
+import Screen2 from './Components/Screen2';
 
 
 
@@ -30,6 +31,7 @@ function App() {
           <Route exact path="/update" element={<Update />}>  </Route>
           <Route exact path="*" element={<Error404 />}>  </Route>
           <Route exact path="/reset" element={<Resetpassword />}>  </Route>
+          <Route exact path="/sidebar" element={<Screen2/>}>  </Route>
 
 
           <Route path="/private" element={<Privateroute />}>
