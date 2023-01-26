@@ -39,11 +39,18 @@ function AdminLogin() {
   };
 
   return (
-    <Container>
+    <Container className="admin">
       <Row>
         <Col md={{ span: 6, offset: 3 }}>
-            
-          <h1>Admin Login</h1>
+            <div className="heading">
+               <div className="first">
+               <h1>Admin </h1>
+               </div>
+               <div className="second">
+               <h1> Login</h1>
+               </div>
+            </div>
+         
           <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>

@@ -74,6 +74,7 @@ input#email {
 }
 
 .adddiv {
+  margin-top: 80px;
   margin-left: 50px;
 }
 
@@ -87,33 +88,38 @@ h1.header {
   font-weight: bold;
 }
 
-/* table.table.text-center {
-  margin-left: 100px;
-} */
+
 
 .spin{
-   margin-left: 600px;
-   margin-bottom: 500px;
+  margin-left: -550px;
+  margin-top: 300px;
 }
 
  .logout{
-  display: flex !important;
-  margin-left: 1100px;
-  /* margin-top: 300px; */
-  margin-top: -90px;
+  margin-left: 900px;
+  margin-top: -140px;
  }
 
- .showrec{
-  margin-bottom: 200px;
-  margin-left: 150px;
- }
+ table.table {
+  margin-left: -620px;
+  margin-top: 250px;
+ 
+}
 
  .dash{
-  margin-top: 500px;
+  margin-top: 50px;
   font-weight: bold;
   margin-left: 50px;
  }
 
- .sidebar{
-  margin-left: 200px;
- }
+.admin{
+  margin-top: 100px;
+}
+
+.heading{
+  display: flex;
+}
+
+.second{
+  margin-left: 10px;
+}

@@ -62,14 +62,14 @@ function ReadForuser() {
                 className="spin"
                 color={"#36d7b7"}
                 loading={loading}
-                size={100}
+                size={80}
                 aria-label="Loading Spinner"
                 data-testid="loader"
               />
             ) : (
               <div>
-                <div className="showrec">
-                  <table className="table text-center">
+                <div >
+                  <table className="table ">
                     <thead>
                       <tr>
                         <th scope="col">#</th>
