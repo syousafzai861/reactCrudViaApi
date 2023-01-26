@@ -100,11 +100,11 @@ h1.header {
   display: flex !important;
   margin-left: 1100px;
   /* margin-top: 300px; */
-  margin-top: -100px;
+  margin-top: -90px;
  }
 
  .showrec{
-  margin-bottom: 600px;
+  margin-bottom: 200px;
   margin-left: 150px;
  }
 
@@ -112,4 +112,8 @@ h1.header {
   margin-top: 500px;
   font-weight: bold;
   margin-left: 50px;
+ }
+
+ .sidebar{
+  margin-left: 200px;
  }

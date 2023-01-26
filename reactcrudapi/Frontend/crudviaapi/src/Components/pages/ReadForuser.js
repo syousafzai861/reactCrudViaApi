@@ -3,9 +3,8 @@ import axios from "axios";
 import { Col, Container, Nav, NavDropdown, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
-import Screen2 from "./Screen2";
-
 function ReadForuser() {
+
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
@@ -42,6 +41,7 @@ function ReadForuser() {
   }, []);
   return (
     <>
+
       <Container>
         <Row>
           <Col className="dash">
@@ -57,49 +57,47 @@ function ReadForuser() {
         </Row>
         <Row>
           <Col>
-          {loading ? (
-        <ClipLoader
-          className="spin"
-          color={"#36d7b7"}
-          loading={loading}
-          size={100}
-          aria-label="Loading Spinner"
-          data-testid="loader"
-        />
-      ) : (
-        <div>
-          <div className="showrec">
-            <table className="table text-center">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Email</th>
-                </tr>
-              </thead>
-
-              {data.map((data) => {
-                return (
-                  <>
-                    <tbody>
+            {loading ? (
+              <ClipLoader
+                className="spin"
+                color={"#36d7b7"}
+                loading={loading}
+                size={100}
+                aria-label="Loading Spinner"
+                data-testid="loader"
+              />
+            ) : (
+              <div>
+                <div className="showrec">
+                  <table className="table text-center">
+                    <thead>
                       <tr>
-                        <th scope="row">{data.id}</th>
-                        <td>{data.attributes.name}</td>
-                        <td>{data.attributes.email}</td>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
                       </tr>
-                    </tbody>
-                  </>
-                );
-              })}
-            </table>
-          </div>
-        </div>
-      )}
+                    </thead>
+
+                    {data.map((data) => {
+                      return (
+                        <>
+                          <tbody>
+                            <tr>
+                              <th scope="row">{data.id}</th>
+                              <td>{data.attributes.name}</td>
+                              <td>{data.attributes.email}</td>
+                            </tr>
+                          </tbody>
+                        </>
+                      );
+                    })}
+                  </table>
+                </div>
+              </div>
+            )}
           </Col>
         </Row>
-      </Container>
-      
-      
+      </Container>      
     </>
   );
 }
