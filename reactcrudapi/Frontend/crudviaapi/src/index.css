@@ -96,7 +96,7 @@ h1.header {
 
  .logout{
   margin-left: 900px;
-  margin-top: -140px;
+  margin-top: -330px;
  }
 
  table.table {
@@ -121,4 +121,8 @@ h1.header {
 
 .second{
   margin-left: 10px;
+}
+
+.Register{
+  margin-top: 60px;
 }

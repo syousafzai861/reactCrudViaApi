@@ -46,7 +46,7 @@ function Registration() {
             history("/login")
     }
     return (
-        <Container>
+        <Container className="Register">
             <Row>
                 <Col md={{ span: 6, offset: 3 }}>
                     <h1>Registration Page</h1>
