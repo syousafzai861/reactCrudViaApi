@@ -15,18 +15,18 @@ function Sidebar({children}) {
   const toggle = ()=> setIsopen(!Isopen);
   const menuIcon = [
     {
-      name: "Dashboard",
-      path: "/dashboard",
+      name: "Admin Login",
+      path: "/Adminlogin",
       icon: <FaTh />,
     },
     {
-      name: "About",
-      path: "/about",
+      name: "User Login",
+      path: "/Login",
       icon: <FaUserAlt />,
     },
     {
-      name: "Product",
-      path: "/product",
+      name: "Register",
+      path: "/Registration",
       icon: <FaShoppingBag />,
     },
     {
@@ -36,7 +36,7 @@ function Sidebar({children}) {
     },
     {
       name: "Comment",
-      path: "/comment",
+      path: "/ReadForuser",
       icon: <FaCommentAlt />,
     },
     {
